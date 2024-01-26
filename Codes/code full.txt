@@ -1,0 +1,67 @@
+<div>{{ greet }} {{ name }}</div>
+<div v-html="Oname"></div>
+<h2 :id="headinid">Heading</h2>
+<h2 class="underline">Underline text</h2>
+<button :disabled ="isDisabled">Pasoori</button>
+<h2 :class="saani && 'saani'">Saani</h2>
+<h2 :class="isbikgai ? 'sold' : 'new'">Biq Gai</h2>
+<h2 :class="[saani && 'saani',isbikgai ? 'sold' : 'new' ]">Navi ai ha sohnia</h2>
+<h2 :class= "{
+  saani: saani,
+  new: ! isbikgai,
+  'sold': isbikgai,
+}">Pta nahi</h2>
+<h2 :style = "{
+  color: rang,
+  'font-size': headersize + 'px'
+  }">Highlighted color</h2>
+
+  <h2 :style="headerstyleobject">Highlighted color 2sra</h2>
+  <div :style="[newobject1, newobject2]">success style </div>
+  <div :style="[newobject1, khatra]">khatra style </div>
+
+_______________________________________________________________________________________________________
+ return {
+       greet: "SALAM",
+       name: "Saani",
+       Oname: '<b>Sikandar</b>',
+       headinid: "Heading",
+       isDisabled: false,
+       saani: true,
+       isbikgai: true,
+       rang: 'orange',
+       headersize: 50,
+       headerstyleobject: {
+         color: 'green',
+         fontSize: '50px',
+         padding: '20px'
+       },
+       newobject1: {
+         fontSize: '70px',
+         padding: '20px'
+       },
+       newobject2: {
+         color: 'purple',
+         backgroundColor: 'pink',
+         border: '1px solid green'
+       },
+       khatra: {
+         color: 'darkred',
+         backgroundColor: 'red',
+         border: '2px solid darkred'
+       }
+     };
+
+______________________________________________________________________________
+.underline {
+  text-decoration: underline;
+}
+.saani {
+  font-family: italic
+}
+.new {
+  color:blue
+}
+.sold {
+  color:red
+}

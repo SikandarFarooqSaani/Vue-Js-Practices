@@ -1,0 +1,24 @@
+<h2>{{name}}</h2>
+<div>
+  <button v-on:click ="changeName">Change Name</button>
+</div>
+<h2>{{count}}</h2>
+<div>
+  <button v-on:click="increment(4)">Ascend 4</button>
+    <button v-on:click="increment(1)">Ascend 1</button>
+  <button v-on:click="decrement(4)">Desend 4</button>
+    <button v-on:click="decrement(1)">Desend 1</button>
+</div>
+_________________________________________________________________________
+      name:'Farooq',
+      count: 0,
+_________
+changeName(){
+       this.name = "Saani"
+     },
+     increment(num){
+       this.count += num
+     },
+     decrement(num){
+       this.count -= num
+     }

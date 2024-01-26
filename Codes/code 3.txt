@@ -1,0 +1,56 @@
+<h2 v-for="(name, index) in names" :key="name">{{index}} {{ name }}</h2>
+<h2 v-for="name in fullNames" :key="name">{{name.first}} {{name.last}}</h2>
+<div v-for="actor in actors" :key="actor.name">
+  <h2>{{actor.name}}</h2>
+  <h3 v-for="drama in actor.dramas" :key="drama">{{drama}}</h3>
+</div>
+<h2 v-for="(value ,key, index) in myInfo" :key="value">{{ index }} {{ key }} {{ value }}</h2>
+<template v-for="name in names" :key="name">
+  <h2>{{name}}</h2>
+  <hr />
+</template>
+____________________________________________________________________________________________
+ fullNames:[
+       {first:"Sikandar",last:"Farooq"},
+       {first:"Jamal",last: "Hussain"},
+       {first:"Hamza",last: "Ahmed"},
+       {first:"Jawad", last: "Hussain"}
+     ],
+     actors:[
+       {
+         name: 'Imran Ashraf',
+         dramas: ['Ranjha Ranjha kardi', 'Raqs e Bismil'],
+       },
+       {
+         name: "Iqra Aziz",
+         dramas: ["RR kardi", "suno chanda"],
+       },
+     ],
+      myInfo: {
+        name: "Sikandar Farooq",
+        department:"BSCS",
+        Semester:'2'
+      }
+________________________________________________________________________________________________
+<template v-for="name in names" :key="name">
+  <h2 v-if="name === 'Hamza'"></h2>
+</template>
+//This code is for giving conditional statment inside a loop
+___________________________________________________________
+
+   names: ['Sikandar','Jamal','Hamza','Jawad'],
+_________________________________________________________________________________________________
+
+<h2> {{2 + 3 + 5}}</h2>
+<h2>add function - {{add(2,3,6)}}</h2>
+<h2>Multiply Method - {{ multiply(30) }} </h2>
+____________________________________________________________
+ baseNumber: 5,
+    }
+   },
+   methods: {
+     add(a,b,c) {
+       return a+b+c
+     },
+     multiply(num) {
+      return  num * this.baseNumber
